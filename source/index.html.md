@@ -4,7 +4,6 @@ title: LunchBox - API Reference
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
   - ruby
-  - python
   - javascript
 
 toc_footers:
@@ -16,15 +15,16 @@ includes:
 search: true
 ---
 
-# Introduction
+# Introducción
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Bienvenido a la API de LunchBox, puedes usar esta API para acceder a nuestros endpoints,
+los cuales te pueden dar información sobre los restaurantes Universitarios y sus almuerzos que se encuentran en nuestra base de datos.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Puedes encontrar en el area negra el código y puedes cambiar según el lenguaje de programación que estés utilizando.
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
-# Authentication
+
+<!-- # Authentication
 
 > To authorize, use this code:
 
@@ -54,7 +54,7 @@ let api = kittn.authorize('meowmeowmeow');
 
 > Make sure to replace `meowmeowmeow` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://lunchbox.com/developers).
 
 Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
@@ -62,36 +62,29 @@ Kittn expects for the API key to be included in all API requests to the server i
 
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
+</aside> -->
 
-# Kittens
+# Almuerzos
 
 ## Get All Kittens
 
 ```ruby
-require 'kittn'
+require 'lunchbox'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
+api.dishes.get
 ```
 
 ```shell
-curl "http://example.com/api/kittens"
+curl "http://lunchbox.com/api/dishes"
   -H "Authorization: meowmeowmeow"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const lunchbox = require('lunchbox');
 
 let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+let dishes = api.dishes.get();
 ```
 
 > The above command returns JSON structured like this:
@@ -100,7 +93,7 @@ let kittens = api.kittens.get();
 [
   {
     "id": 1,
-    "name": "Fluffums",
+    "name": "Bandeja Paisa",
     "breed": "calico",
     "fluffiness": 6,
     "cuteness": 7
@@ -115,22 +108,20 @@ let kittens = api.kittens.get();
 ]
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves all dishes.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET http://lunchbox.com/api/dishes`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+available | true | If set to false, the result will include dishes that have already been adopted.
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
+
 
 ## Get a Specific Kitten
 
@@ -138,18 +129,11 @@ Remember — a happy kitten is an authenticated kitten!
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
+api.dishes.get(2)
 ```
 
 ```shell
-curl "http://example.com/api/kittens/2"
+curl "http://lunchbox.com/api/dishes/2"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -157,7 +141,7 @@ curl "http://example.com/api/kittens/2"
 const kittn = require('kittn');
 
 let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+let max = api.dishes.get(2);
 ```
 
 > The above command returns JSON structured like this:
@@ -174,11 +158,9 @@ let max = api.kittens.get(2);
 
 This endpoint retrieves a specific kitten.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET http://lunchbox.com/dishes/<ID>`
 
 ### URL Parameters
 
@@ -192,18 +174,11 @@ ID | The ID of the kitten to retrieve
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
+api.dishes.delete(2)
 ```
 
 ```shell
-curl "http://example.com/api/kittens/2"
+curl "http://lunchbox.com/api/dishes/2"
   -X DELETE
   -H "Authorization: meowmeowmeow"
 ```
@@ -212,7 +187,7 @@ curl "http://example.com/api/kittens/2"
 const kittn = require('kittn');
 
 let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
+let max = api.dishes.delete(2);
 ```
 
 > The above command returns JSON structured like this:
@@ -228,7 +203,7 @@ This endpoint deletes a specific kitten.
 
 ### HTTP Request
 
-`DELETE http://example.com/kittens/<ID>`
+`DELETE http://lunchbox.com/dishes/<ID>`
 
 ### URL Parameters
 
