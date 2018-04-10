@@ -29,61 +29,61 @@ Puedes encontrar en el area negra el código y puedes cambiar según el lenguaje
 > To authorize, use this code:
 
 ```ruby
-require 'kittn'
+require 'lunchbox'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+api = LunchBox::APIClient.authorize!('123456789')
 ```
 
 ```python
-import kittn
+import lunchbox
 
-api = kittn.authorize('meowmeowmeow')
+api = lunchbox.authorize('123456789')
 ```
 
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://lunchbox.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside> -->
-
-# Almuerzos
-
-## Get All Kittens
-
-```ruby
-require 'lunchbox'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.dishes.get
-```
-
-```shell
-curl "http://lunchbox.com/api/dishes"
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: 123456789"
 ```
 
 ```javascript
 const lunchbox = require('lunchbox');
 
-let api = kittn.authorize('meowmeowmeow');
+let api = lunchbox.authorize('123456789');
+```
+
+> Make sure to replace `123456789` with your API key.
+
+LunchBox uses API keys to allow access to the API. You can register a new LunchBox API key at our [developer portal](http://lunchbox.com/developers).
+
+LunchBox expects for the API key to be included in all API requests to the server in a header that looks like the following:
+
+`Authorization: 123456789`
+
+<aside class="notice">
+You must replace <code>123456789</code> with your personal API key.
+</aside> -->
+
+# Almuerzos
+
+## Mostar todos los almuerzos
+
+```ruby
+require 'lunchbox'
+
+api = LunchBox::APIClient.authorize!('123456789')
+api.dishes.get
+```
+
+```shell
+curl "http://lunchbox.com/api/dishes"
+  -H "Authorization: 123456789"
+```
+
+```javascript
+const lunchbox = require('lunchbox');
+
+let api = lunchbox.authorize('123456789');
 let dishes = api.dishes.get();
 ```
 
@@ -123,24 +123,24 @@ available | true | If set to false, the result will include dishes that have alr
 
 
 
-## Get a Specific Kitten
+## Mostrar un almuerzo específico
 
 ```ruby
-require 'kittn'
+require 'lunchbox'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+api = LunchBox::APIClient.authorize!('123456789')
 api.dishes.get(2)
 ```
 
 ```shell
 curl "http://lunchbox.com/api/dishes/2"
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: 123456789"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const lunchbox = require('lunchbox');
 
-let api = kittn.authorize('meowmeowmeow');
+let api = lunchbox.authorize('123456789');
 let max = api.dishes.get(2);
 ```
 
@@ -168,25 +168,25 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to retrieve
 
-## Delete a Specific Kitten
+## Eliminar un almuerzo específico
 
 ```ruby
-require 'kittn'
+require 'lunchbox'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+api = LunchBox::APIClient.authorize!('123456789')
 api.dishes.delete(2)
 ```
 
 ```shell
 curl "http://lunchbox.com/api/dishes/2"
   -X DELETE
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: 123456789"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const lunchbox = require('lunchbox');
 
-let api = kittn.authorize('meowmeowmeow');
+let api = lunchbox.authorize('123456789');
 let max = api.dishes.delete(2);
 ```
 
